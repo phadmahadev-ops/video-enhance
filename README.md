@@ -57,20 +57,25 @@ Environment overrides: `ENHANCE_FFMPEG`, `ENHANCE_OUT`, `ENHANCE_MODELS`,
 
 ## ☁️ Best quality: FlashVSR+ (cloud, free)
 
-For diffusion-grade 4x upscaling (temporal consistency), open the notebook:
+For diffusion-grade 4x upscaling (temporal consistency), use the notebook below.
 
-- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/phadmahadev-ops/video-enhance/blob/main/notebooks/flashvsr_kaggle.ipynb)
-- Kaggle: `notebooks/flashvsr_kaggle.ipynb` download karo → [kaggle.com](https://www.kaggle.com) → New Notebook → File → Import Notebook → GPU T4 x2 + Internet ON → Run all
+### 📚 Notebooks
+
+| Notebook | Kya hai | Status | Colab | Kaggle |
+|---|---|---|---|---|
+| `flashvsr_kaggle.ipynb` | One-step diffusion upscale (4x, temporal-consistent) | ✅ working (Nov 2026) | [![Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/phadmahadev-ops/video-enhance/blob/main/notebooks/flashvsr_kaggle.ipynb) | [![Download for Kaggle](https://img.shields.io/badge/Download-Kaggle-20BEFF)](https://raw.githubusercontent.com/phadmahadev-ops/video-enhance/main/notebooks/flashvsr_kaggle.ipynb) |
 
 Downloads ~7 GB of weights, then upscales uploaded videos to 1080p/1440p.
 
 ### Kaggle par kaise chalaye (steps)
 
-1. [kaggle.com](https://www.kaggle.com) → Sign in (free)
-2. Code → New Notebook
-3. File → Import Notebook → `flashvsr_kaggle.ipynb` upload karo
+1. **Download for Kaggle** button dabao (raw `.ipynb` download hoga)
+2. [kaggle.com](https://www.kaggle.com) → Sign in (free)
+3. Code → New Notebook → **File → Import Notebook** → download hui file upload karo
 4. Right panel → Settings → Accelerator → **GPU T4 x2**; Internet → **ON**
 5. Run all cells → video upload karo → `output.mp4` download karo
+
+> 💡 Colab direct use karna ho to **Colab button** dabao (T4 free).
 
 ## 🧠 How it works
 
