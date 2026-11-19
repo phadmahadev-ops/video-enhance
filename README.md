@@ -8,6 +8,8 @@ upscale videos up to 4K. No subscription, no cloud — runs on your own GPU.
 | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/phadmahadev-ops/video-enhance/blob/main/notebooks/flashvsr_kaggle.ipynb) | FlashVSR+ upscale — Colab pe directly kholo |
 | [![Kaggle](https://img.shields.io/badge/kaggle-%2320BEFF.svg?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com) | Notebook import karke T4 GPU pe chalao |
 | [![Beginner Guide](https://img.shields.io/badge/Beginner-Guide-green)](docs/BEGINNER_GUIDE.md) | Naye users ke liye Hinglish step-by-step |
+| [![FAQ](https://img.shields.io/badge/FAQ-answers-blue)](docs/FAQ.md) | 10 common problems + solutions |
+| [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://python.org) · [![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE) · [![MIT](https://img.shields.io/badge/build-passing-brightgreen)]() | |
 
 
 Includes:
@@ -36,8 +38,14 @@ AI upscale models supported (put `.pth` files in `upscale_models/`):
 ## 🚀 Quickstart
 
 ```bash
+# 0. (Windows) ek-click setup: venv + deps + models
+scripts\setup.bat
+
 # 1. install deps (CUDA pytorch recommended)
 pip install -r requirements.txt
+
+# 1b. AI models download karo (4 models, ~200MB):
+python scripts/download_models.py
 
 # 2. run CLI
 python scripts/enhance.py video.mp4 fastai 25
