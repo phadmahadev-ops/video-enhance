@@ -11,6 +11,15 @@ upscale videos up to 4K. No subscription, no cloud — runs on your own GPU.
 | [![FAQ](https://img.shields.io/badge/FAQ-answers-blue)](docs/FAQ.md) | 10 common problems + solutions |
 | [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://python.org) · [![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE) · [![MIT](https://img.shields.io/badge/build-passing-brightgreen)]() | |
 
+## ✨ Features
+
+- 🚀 **5 modes** — turbo · best · fastai (2x) · hq (4x) · night denoise
+- 🖥️ **CLI + GUI** — drag-drop batch, live progress + ETA
+- 🧠 **AI models** — ESRGAN family (auto-download script)
+- ☁️ **FlashVSR+ notebook** — diffusion-grade 4x upscale (free cloud)
+- 🗿 **One-click setup** — `scripts\setup.bat`
+- 📖 **Guides** — Beginner (Hinglish) · FAQ · troubleshooting
+
 
 Includes:
 - **CLI** (`scripts/enhance.py`) + **GUI** (`scripts/enhance_gui.py`)
