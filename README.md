@@ -3,6 +3,13 @@
 Free, local AI video enhancement & upscaling: denoise, color, sharpen, and
 upscale videos up to 4K. No subscription, no cloud — runs on your own GPU.
 
+| Badge | Kaun use kare |
+|---|---|
+| [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/phadmahadev-ops/video-enhance/blob/main/notebooks/flashvsr_kaggle.ipynb) | FlashVSR+ upscale — Colab pe directly kholo |
+| [![Kaggle](https://img.shields.io/badge/kaggle-%2320BEFF.svg?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com) | Notebook import karke T4 GPU pe chalao |
+| [![Beginner Guide](https://img.shields.io/badge/Beginner-Guide-green)](docs/BEGINNER_GUIDE.md) | Naye users ke liye Hinglish step-by-step |
+
+
 Includes:
 - **CLI** (`scripts/enhance.py`) + **GUI** (`scripts/enhance_gui.py`)
 - **Night/low-light denoise** pipeline (`scripts/night_enhance.py`)
@@ -50,10 +57,20 @@ Environment overrides: `ENHANCE_FFMPEG`, `ENHANCE_OUT`, `ENHANCE_MODELS`,
 
 ## ☁️ Best quality: FlashVSR+ (cloud, free)
 
-For diffusion-grade 4x upscaling (temporal consistency), open
-[`notebooks/flashvsr_kaggle.ipynb`](notebooks/flashvsr_kaggle.ipynb) on
-[Kaggle](https://www.kaggle.com) (GPU T4 x2) or Google Colab (T4).
+For diffusion-grade 4x upscaling (temporal consistency), open the notebook:
+
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/phadmahadev-ops/video-enhance/blob/main/notebooks/flashvsr_kaggle.ipynb)
+- Kaggle: `notebooks/flashvsr_kaggle.ipynb` download karo → [kaggle.com](https://www.kaggle.com) → New Notebook → File → Import Notebook → GPU T4 x2 + Internet ON → Run all
+
 Downloads ~7 GB of weights, then upscales uploaded videos to 1080p/1440p.
+
+### Kaggle par kaise chalaye (steps)
+
+1. [kaggle.com](https://www.kaggle.com) → Sign in (free)
+2. Code → New Notebook
+3. File → Import Notebook → `flashvsr_kaggle.ipynb` upload karo
+4. Right panel → Settings → Accelerator → **GPU T4 x2**; Internet → **ON**
+5. Run all cells → video upload karo → `output.mp4` download karo
 
 ## 🧠 How it works
 
