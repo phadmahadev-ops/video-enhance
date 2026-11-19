@@ -76,6 +76,8 @@ Downloads ~7 GB of weights, then upscales uploaded videos to 1080p/1440p.
 5. Run all cells → video upload karo → `output.mp4` download karo
 
 > 💡 Colab direct use karna ho to **Colab button** dabao (T4 free).
+>
+> 💡 **Direct Kaggle link** (H3 video gen ke liye): `https://www.kaggle.com/code/gattootv/minimax-h3-turbo-int8-video-audio-reuploaded` — login sirf run karte waqt.
 
 ## 🧠 How it works
 
