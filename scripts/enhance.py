@@ -244,21 +244,32 @@ def run_ai(video, dst, pre_down, noise=-25, model_path=None):
 
 
 def main():
-    if len(sys.argv) < 2 or not os.path.isfile(sys.argv[1]):
-        log("Usage: enhance.py <video> [turbo|fastai|hq] [noise: 10-35]")
+    import argparse
+    ap = argparse.ArgumentParser(description="video-enhance")
+    ap.add_argument("video")
+    ap.add_argument("mode", nargs="?", default="turbo",
+                    choices=["turbo", "best", "fastai", "hq"])
+    ap.add_argument("noise", nargs="?", type=int, default=25,
+                    help="audio denoise level 10-35")
+    ap.add_argument("--model", default=os.environ.get("ENHANCE_MODEL"),
+                    help=".pth upscale model (AI modes)")
+    ap.add_argument("--output", default=None, help="output path (default: <video>_enhanced.mp4)")
+    ap.add_argument("--tile", type=int, default=TILE, help="tile size px")
+    a = ap.parse_args()
+
+    if not os.path.isfile(a.video):
+        log("File nahi mili: %s" % a.video)
         sys.exit(1)
-    video = sys.argv[1]
-    mode = sys.argv[2] if len(sys.argv) > 2 else "turbo"
-    noise = -25
-    if len(sys.argv) > 3:
-        try:
-            noise = -abs(int(sys.argv[3]))
-        except ValueError:
-            pass
+    video, mode = a.video, a.mode
+    noise = -abs(a.noise)
+    if a.model:
+        os.environ["ENHANCE_MODEL"] = a.model
+    if a.tile:
+        globals()["TILE"] = max(128, a.tile)
 
     base = os.path.splitext(os.path.basename(video))[0]
     os.makedirs(OUT_DIR, exist_ok=True)
-    dst = os.path.join(OUT_DIR, base + "_enhanced.mp4")
+    dst = a.output or os.path.join(OUT_DIR, base + "_enhanced.mp4")
 
     W, H, fps = probe_ff(video)
     log("[*] Mode: %s | noise: %d | %dx%d @ %.2ffps" %
@@ -278,9 +289,6 @@ def main():
     elif mode in ("fastai", "hq"):
         run_ai(video, dst, 0.5 if mode == "fastai" else 1.0, noise,
                os.environ.get("ENHANCE_MODEL"))
-    else:
-        log("Unknown mode: %s" % mode)
-        sys.exit(1)
 
     mins, secs = divmod(int(time.time() - t0), 60)
     mb = os.path.getsize(dst) / 1048576.0
